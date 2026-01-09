@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Define la codificación de caracteres -->
+    <meta charset="UTF-8">
+
+    <!-- Título que se muestra en la pestaña del navegador -->
+    <title>Programas Comunitarios</title>
+
+    <style>
+        /* ===== ESTILOS GENERALES ===== */
+        * {
+            margin: 0;              /* Elimina márgenes por defecto */
+            padding: 0;             /* Elimina rellenos por defecto */
+            box-sizing: border-box; /* Incluye padding y borde en el tamaño total */
+            font-family: Arial, sans-serif; /* Fuente principal */
+        }
+
+        /* ===== CUERPO DE LA PÁGINA ===== */
+        body {
+            min-height: 100vh; /* Altura mínima completa de la pantalla */
+            background: linear-gradient(135deg, #fff8e1, #e8f5e9); /* Fondo degradado */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            color: #2e4d3b;
+        }
+
+        /* ===== CONTENEDOR PRINCIPAL ===== */
+        .contenedor {
+            background: rgba(255,255,255,0.95);
+            max-width: 1000px;
+            width: 100%;
+            padding: 50px;
+            border-radius: 35px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+            border: 2px solid #c8e6c9;
+            animation: aparecer 1.2s ease;
+        }
+
+        /* ===== TÍTULO PRINCIPAL ===== */
+        h1 {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            color: #2e7d32;
+            text-align: center;
+        }
+
+        /* ===== DESCRIPCIÓN ===== */
+        .descripcion {
+            text-align: center;
+            font-size: 1.1em;
+            margin-bottom: 35px;
+        }
+
+        /* ===== CUADROS DE PROGRAMAS ===== */
+        .programas {
+            display: grid; /* Distribución en cuadrícula */
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        /* ===== TARJETA INDIVIDUAL ===== */
+        .programa {
+            background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
+            border-radius: 25px;
+            padding: 25px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.35s ease;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            border: 2px solid transparent;
+        }
+
+        /* Efecto hover en tarjetas */
+        .programa:hover {
+            transform: translateY(-8px) scale(1.05);
+            border-color: #81c784;
+            box-shadow: 0 18px 35px rgba(76,175,80,0.4);
+        }
+
+        /* Íconos (emojis) */
+        .programa span {
+            font-size: 2.5em;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* Título del programa */
+        .programa h3 {
+            font-size: 1.1em;
+            color: #2e7d32;
+        }
+
+        /* ===== SECCIÓN DE INFORMACIÓN ===== */
+        .info {
+            display: none; /* Oculta la información al inicio */
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 25px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            margin-bottom: 30px;
+            animation: aparecer 0.8s ease;
+        }
+
+        .info h2 {
+            color: #388e3c;
+            margin-bottom: 15px;
+        }
+
+        .info p {
+            line-height: 1.7;
+            font-size: 1.05em;
+        }
+
+        /* ===== BOTÓN DE REGRESO ===== */
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            border-radius: 35px;
+            text-decoration: none;
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #0b2e13;
+            background: linear-gradient(135deg, #66bb6a, #43a047);
+            box-shadow: 0 10px 25px rgba(67,160,71,0.45);
+            transition: all 0.35s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-4px) scale(1.04);
+            box-shadow: 0 18px 35px rgba(76,175,80,0.6);
+        }
+
+        /* ===== ANIMACIÓN ===== */
+        @keyframes aparecer {
+            from { opacity: 0; transform: translateY(25px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- CONTENEDOR PRINCIPAL -->
+<div class="contenedor">
+
+    <!-- TÍTULO -->
+    <h1>🌿 Programas Comunitarios</h1>
+
+    <!-- DESCRIPCIÓN -->
+    <p class="descripcion">
+        Estos programas buscan reducir la contaminación y fomentar el reciclaje
+        a través de la participación de la comunidad.
+    </p>
+
+    <!-- CUADROS INTERACTIVOS -->
+    <div class="programas">
+
+        <!-- Programa México -->
+        <div class="programa" onclick="mostrar('mexico')">
+            <span>♻️</span>
+            <h3>Recicla PET (México)</h3>
+        </div>
+
+        <!-- Programa Ecuador -->
+        <div class="programa" onclick="mostrar('ecuador')">
+            <span>🌎</span>
+            <h3>Proyecto Comunitario (Ecuador)</h3>
+        </div>
+
+        <!-- Programa Jalisco -->
+        <div class="programa" onclick="mostrar('jalisco')">
+            <span>🏘️</span>
+            <h3>Reciclaje en Jalisco</h3>
+        </div>
+
+        <!-- Programa Residencial -->
+        <div class="programa" onclick="mostrar('residencial')">
+            <span>🏢</span>
+            <h3>Complejos Residenciales</h3>
+        </div>
+
+        <!-- Programa Argentina -->
+        <div class="programa" onclick="mostrar('argentina')">
+            <span>🌱</span>
+            <h3>Reciclaje y Compostaje</h3>
+        </div>
+    </div>
+
+    <!-- SECCIÓN DONDE SE MUESTRA LA INFORMACIÓN -->
+    <div class="info" id="info"></div>
+
+    <!-- BOTÓN PARA REGRESAR AL MENÚ -->
+    <a href="menu.html" class="btn">← Volver al menú</a>
+</div>
+
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+/**
+ * Muestra la información del programa seleccionado
+ * @param {string} programa - Identificador del programa
+ */
+function mostrar(programa) {
+    const info = document.getElementById("info");
+
+    /* Datos de cada programa comunitario */
+    const datos = {
+        mexico: {
+            titulo: "Recicla PET con tu Comunidad (México)",
+            texto: "Este programa consiste en recolectar y reciclar botellas de plástico PET en comunidades y escuelas..."
+        },
+        ecuador: {
+            titulo: "Proyecto Comunitario Grupo 1 (Ecuador)",
+            texto: "Consiste en la separación de residuos reciclables y orgánicos dentro de comunidades..."
+        },
+        jalisco: {
+            titulo: "Proyecto Comunitario de Reciclaje (Jalisco)",
+            texto: "Este programa consiste en crear centros de acopio y promover el reciclaje..."
+        },
+        residencial: {
+            titulo: "Reciclaje en Complejos Residenciales",
+            texto: "Consiste en instalar contenedores separados dentro de residencias..."
+        },
+        argentina: {
+            titulo: "Reciclaje y Compostaje (Argentina)",
+            texto: "Este programa consiste en reciclar materiales y transformar residuos orgánicos en compost..."
+        }
+    };
+
+    /* Inserta la información en el contenedor */
+    info.innerHTML = `
+        <h2>${datos[programa].titulo}</h2>
+        <p>${datos[programa].texto}</p>
+    `;
+
+    /* Muestra la sección de información */
+    info.style.display = "block";
+}
+</script>
+
+</body>
+</html>

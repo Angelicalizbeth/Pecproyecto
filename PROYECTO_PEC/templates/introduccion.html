@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Define la codificación de caracteres para permitir acentos -->
+    <meta charset="UTF-8">
+
+    <!-- Título que se muestra en la pestaña del navegador -->
+    <title>Introducción</title>
+
+    <style>
+        /* ===== ESTILOS GENERALES ===== */
+        * {
+            margin: 0;              /* Elimina márgenes por defecto */
+            padding: 0;             /* Elimina rellenos por defecto */
+            box-sizing: border-box; /* Controla el tamaño real de los elementos */
+            font-family: Arial, sans-serif; /* Fuente principal */
+        }
+
+        /* ===== FONDO DE LA PÁGINA ===== */
+        /* Incluye una imagen de fondo con un degradado blanco para mejorar la legibilidad */
+        body {
+            height: 100vh;
+            background:
+                linear-gradient(
+                    rgba(255, 255, 255, 0.8),
+                    rgba(255, 255, 255, 0.8)
+                ),
+                url('snoo.png') no-repeat center center/cover;
+            display: flex;
+            justify-content: center; /* Centrado horizontal */
+            align-items: center;     /* Centrado vertical */
+            color: #2e4d3b;
+            overflow: hidden; /* Oculta elementos fuera de la pantalla */
+        }
+
+        /* ===== CONTENEDOR DE INTRODUCCIÓN ===== */
+        .intro {
+            background: rgba(255, 255, 255, 0.88);
+            padding: 55px;
+            border-radius: 30px;
+            width: 85%;
+            max-width: 850px;
+            text-align: center;
+            animation: aparecer 1.5s ease; /* Animación de entrada */
+            box-shadow: 0 15px 30px rgba(0,0,0,0.18);
+            border: 2px solid #c8e6c9;
+        }
+
+        /* ===== TÍTULO PRINCIPAL ===== */
+        h1 {
+            font-size: 3em;
+            margin-bottom: 25px;
+            color: #388e3c;
+            animation: titulo 1.6s ease;
+        }
+
+        /* ===== TEXTO DE INTRODUCCIÓN ===== */
+        p {
+            font-size: 1.2em;
+            line-height: 1.9;
+            animation: texto 2s ease;
+        }
+
+        /* ===== BOTÓN PARA CONTINUAR ===== */
+        .btn-continuar {
+            margin-top: 45px;
+            display: inline-block;
+            padding: 15px 48px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-size: 1.15em;
+            font-weight: bold;
+            color: white;
+            background: linear-gradient(135deg, #81c784, #66bb6a);
+            box-shadow: 0 10px 22px rgba(102,187,106,0.55);
+            transition: all 0.35s ease;
+        }
+
+        /* Efecto hover del botón */
+        .btn-continuar:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(102,187,106,0.7);
+        }
+
+        /* ===== ANIMACIONES ===== */
+        @keyframes aparecer {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes titulo {
+            from {
+                opacity: 0;
+                transform: translateY(-35px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes texto {
+            from {
+                opacity: 0;
+                transform: translateY(35px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===== BURBUJAS DECORATIVAS ===== */
+        /* Elementos visuales animados para mejorar la estética */
+        .burbuja {
+            position: absolute;
+            bottom: -50px;
+            width: 18px;
+            height: 18px;
+            background: rgb(37, 128, 42);
+            border-radius: 50%;
+            animation: subir 10s infinite ease-in;
+        }
+
+        /* Posición y duración distintas para cada burbuja */
+        .burbuja:nth-child(1) { left: 15%; animation-duration: 12s; }
+        .burbuja:nth-child(2) { left: 35%; animation-duration: 9s; }
+        .burbuja:nth-child(3) { left: 55%; animation-duration: 11s; }
+        .burbuja:nth-child(4) { left: 75%; animation-duration: 8s; }
+        .burbuja:nth-child(5) { left: 90%; animation-duration: 13s; }
+
+        /* Animación de subida de burbujas */
+        @keyframes subir {
+            from {
+                transform: translateY(0);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(-120vh);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- CONTENEDOR PRINCIPAL DE LA INTRODUCCIÓN -->
+    <div class="intro">
+
+        <!-- TÍTULO DE BIENVENIDA -->
+        <h1>¡Bienvenid@!</h1>
+
+        <!-- TEXTO INTRODUCTORIO -->
+        <p>
+            Para dar seguimiento a las diferentes secciones, déjanos darte una
+            breve introducción. Nuestra página web está estructurada para darte
+            una mejor experiencia, al igual que brindarte información verificada
+            y precisa para una mejor comprensión.
+            <br><br>
+            Es importante tener en claro que cuidar a nuestro planeta es algo
+            fundamental, por lo que aún estamos a tiempo para lograr un gran
+            cambio.
+            <br><br>
+            En las diferentes secciones que tenemos encontrarás información en
+            donde cada uno de nosotros podrá contribuir en este gran cambio,
+            haciendo de ello un buen uso de los residuos.
+        </p>
+
+        <!-- BOTÓN DE ACCESO AL MENÚ PRINCIPAL -->
+        <a href="menu.html" class="btn-continuar">Ir al menú ➜</a>
+    </div>
+
+    <!-- ELEMENTOS DECORATIVOS ANIMADOS -->
+    <div class="burbuja"></div>
+    <div class="burbuja"></div>
+    <div class="burbuja"></div>
+    <div class="burbuja"></div>
+    <div class="burbuja"></div>
+
+</body>
+</html>

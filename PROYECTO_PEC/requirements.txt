@@ -1,0 +1,4 @@
+# gunicorn: servidor WSI (recomendado para desplegar la app en produccion)
+gunicorn
+# Flask: microframework web usado para desarrollar y ejecutar la aplicacion
+Flask 

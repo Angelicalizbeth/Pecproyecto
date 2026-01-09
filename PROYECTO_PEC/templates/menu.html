@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Define la codificación de caracteres para admitir acentos y símbolos -->
+    <meta charset="UTF-8">
+
+    <!-- Título que aparece en la pestaña del navegador -->
+    <title>Menú Principal</title>
+
+    <style>
+        /* Estilos generales para todos los elementos */
+        * {
+            margin: 0;              /* Elimina márgenes por defecto */
+            padding: 0;             /* Elimina rellenos por defecto */
+            box-sizing: border-box; /* Incluye padding y borde en el tamaño total */
+            font-family: Arial, sans-serif; /* Fuente principal */
+        }
+
+        /* Estilo general del cuerpo de la página */
+        body {
+            height: 100vh; /* Altura completa de la ventana */
+
+            /* Fondo con imagen y capa blanca semitransparente */
+            background:
+                linear-gradient(
+                    rgba(255,255,255,0.85),
+                    rgba(255,255,255,0.85)
+                ),
+                url('snoo.png') no-repeat center center/cover;
+
+            /* Centrado horizontal y vertical */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            /* Color general del texto */
+            color: #2e4d3b;
+        }
+
+        /* Contenedor principal del menú */
+        .menu {
+            background: rgba(255, 255, 255, 0.9); /* Fondo blanco translúcido */
+            padding: 55px;
+            border-radius: 35px;   /* Bordes redondeados */
+            width: 85%;
+            max-width: 900px;
+            text-align: center;    /* Texto centrado */
+            box-shadow: 0 20px 40px rgba(0,0,0,0.18);
+            animation: aparecer 1.2s ease; /* Animación de entrada */
+            border: 2px solid #c8e6c9;
+        }
+
+        /* Título principal del menú */
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            color: #388e3c;
+        }
+
+        /* Texto descriptivo */
+        p {
+            margin-bottom: 45px;
+            font-size: 1.25em;
+            color: #4e6f5b;
+        }
+
+        /* Contenedor de las opciones del menú */
+        .opciones {
+            display: grid; /* Uso de grid para distribución */
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px; /* Espacio entre opciones */
+        }
+
+        /* Tarjeta individual de cada opción */
+        .opcion {
+            background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
+            border-radius: 25px;
+            padding: 35px 25px;
+            cursor: pointer; /* Cambia el cursor al pasar el mouse */
+            transition: all 0.35s ease;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            border: 2px solid transparent;
+        }
+
+        /* Efecto al pasar el mouse sobre una opción */
+        .opcion:hover {
+            transform: translateY(-10px) scale(1.04);
+            box-shadow: 0 18px 35px rgba(76,175,80,0.4);
+            border: 2px solid #81c784;
+        }
+
+        /* Estilo del ícono (emoji) */
+        .opcion span {
+            font-size: 3em;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        /* Título de cada opción */
+        .opcion h3 {
+            font-size: 1.3em;
+            color: #2e7d32;
+        }
+
+        /* Animación de aparición del menú */
+        @keyframes aparecer {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Contenedor principal del menú -->
+<div class="menu">
+
+    <!-- Título del menú -->
+    <h1>Menú Principal</h1>
+
+    <!-- Texto de bienvenida -->
+    <p>Selecciona la sección que deseas explorar</p>
+
+    <!-- Contenedor de opciones -->
+    <div class="opciones">
+
+        <!-- Opción: ¿Qué es? -->
+        <div class="opcion" onclick="irA('quees.html')">
+            <span></span>
+            <h3>¿Qué es?</h3>
+        </div>
+
+        <!-- Opción: ¿Cómo empezar? -->
+        <div class="opcion" onclick="irA('comoempezar.html')">
+            <span></span>
+            <h3>¿Cómo empezar?</h3>
+        </div>
+
+        <!-- Opción: Beneficios -->
+        <div class="opcion" onclick="irA('beneficios.html')">
+            <span></span>
+            <h3>Beneficios</h3>
+        </div>
+
+        <!-- Opción: Programas comunitarios -->
+        <div class="opcion" onclick="irA('programas.html')">
+            <span></span>
+            <h3>Programas comunitarios</h3>
+        </div>
+
+        <!-- Opción: Juego de residuos -->
+        <div class="opcion" onclick="irA('reciclaje_inteligente.html')">
+            <span>🎮</span>
+            <h3>Juego de residuos</h3>
+        </div>
+
+        <!-- Opción: Contactos -->
+        <div class="opcion" onclick="irA('contactos.html')">
+            <span>📧</span>
+            <h3>Contactos</h3>
+        </div>
+    </div>
+</div>
+
+<!-- Script para redirigir a las diferentes páginas -->
+<script>
+    /**
+     * Función que redirige a la página seleccionada
+     * @param {string} pagina - Nombre del archivo HTML destino
+     */
+    function irA(pagina) {
+        window.location.href = pagina;
+    }
+</script>
+
+</body>
+</html>

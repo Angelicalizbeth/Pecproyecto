@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Juego de Residuos</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        margin: 0;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #e0f2f1, #e8f5e9);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #2e7d32;
+    }
+
+    .juego {
+        background: white;
+        width: 90%;
+        max-width: 1000px;
+        padding: 30px;
+        border-radius: 25px;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        text-align: center;
+    }
+
+    h1 {
+        margin-bottom: 10px;
+    }
+
+    #estado {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    .contenedores {
+        display: flex;
+        justify-content: space-around;
+        margin: 20px 0;
+        flex-wrap: wrap;
+    }
+
+    .contenedor {
+        width: 200px;
+        height: 230px;
+        border: 3px dashed #555;
+        border-radius: 20px;
+        padding: 10px;
+        background: #f9f9f9;
+    }
+
+    .organico { border-color: #4caf50; }
+    .reciclable { border-color: #2196f3; }
+    .inorganico { border-color: #f44336; }
+
+    .residuos {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .residuo {
+        padding: 10px 15px;
+        background: #fff9c4;
+        border-radius: 10px;
+        cursor: grab;
+        font-weight: bold;
+    }
+
+    button {
+        margin-top: 25px;
+        padding: 12px 25px;
+        border: none;
+        border-radius: 12px;
+        background: #2e7d32;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: #1b5e20;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="juego">
+    <h1>♻️ Clasifica los residuos</h1>
+    <p>Arrastra cada residuo al contenedor correcto</p>
+
+    <div id="estado">
+        ⭐ Puntos: <span id="puntos">0</span> |
+        ❤️ Vidas: <span id="vidas">3</span>
+    </div>
+
+    <div class="contenedores">
+        <div class="contenedor organico" data-tipo="organico"
+             ondragover="permitir(event)" ondrop="soltar(event)">
+            <h3>Orgánico</h3> 🍎
+        </div>
+
+        <div class="contenedor reciclable" data-tipo="reciclable"
+             ondragover="permitir(event)" ondrop="soltar(event)">
+            <h3>Reciclable</h3> ♻️
+        </div>
+
+        <div class="contenedor inorganico" data-tipo="inorganico"
+             ondragover="permitir(event)" ondrop="soltar(event)">
+            <h3>Inorgánico</h3> 🚯
+        </div>
+    </div>
+
+    <div class="residuos">
+        <div class="residuo" draggable="true" data-tipo="organico" ondragstart="arrastrar(event)">Cáscara de fruta</div>
+        <div class="residuo" draggable="true" data-tipo="reciclable" ondragstart="arrastrar(event)">Botella</div>
+        <div class="residuo" draggable="true" data-tipo="inorganico" ondragstart="arrastrar(event)">Bolsa plástica</div>
+        <div class="residuo" draggable="true" data-tipo="reciclable" ondragstart="arrastrar(event)">Lata</div>
+        <div class="residuo" draggable="true" data-tipo="organico" ondragstart="arrastrar(event)">Restos de comida</div>
+        <div class="residuo" draggable="true" data-tipo="inorganico" ondragstart="arrastrar(event)">Papel sucio</div>
+    </div>
+
+    <!-- BOTÓN PARA REGRESAR AL MENÚ -->
+    <button onclick="volverMenu()">⬅ Regresar al menú</button>
+</div>
+
+<script>
+    let puntos = 0;
+    let vidas = 3;
+    let residuoActual = null;
+
+    function permitir(ev) {
+        ev.preventDefault();
+    }
+
+    function arrastrar(ev) {
+        residuoActual = ev.target;
+    }
+
+    function soltar(ev) {
+        ev.preventDefault();
+        const tipoContenedor = ev.currentTarget.dataset.tipo;
+        const tipoResiduo = residuoActual.dataset.tipo;
+
+        if (tipoResiduo === tipoContenedor) {
+            ev.currentTarget.appendChild(residuoActual);
+            puntos++;
+        } else {
+            vidas--;
+        }
+
+        actualizarEstado();
+        verificarFin();
+    }
+
+    function actualizarEstado() {
+        document.getElementById("puntos").textContent = puntos;
+        document.getElementById("vidas").textContent = vidas;
+    }
+
+    function verificarFin() {
+        if (vidas === 0) {
+            alert("❌ Juego terminado. Inténtalo de nuevo.");
+            volverMenu();
+        }
+
+        if (puntos === 6) {
+            alert("🎉 ¡Felicidades! Clasificaste todos los residuos.");
+            volverMenu();
+        }
+    }
+
+    function volverMenu() {
+        window.location.href = "index.html"; // archivo del menú
+    }
+</script>
+
+</body>
+</html>

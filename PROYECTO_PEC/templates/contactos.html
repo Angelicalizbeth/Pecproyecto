@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Define la codificación de caracteres para permitir acentos y símbolos -->
+    <meta charset="UTF-8">
+
+    <!-- Título que aparece en la pestaña del navegador -->
+    <title>Contactos</title>
+
+    <style>
+        /* Estilos generales para todos los elementos */
+        * {
+            margin: 0;              /* Elimina márgenes por defecto */
+            padding: 0;             /* Elimina relleno por defecto */
+            box-sizing: border-box; /* Incluye padding y borde en el tamaño total */
+            font-family: Arial, sans-serif; /* Fuente principal */
+        }
+
+        /* Estilo general del cuerpo de la página */
+        body {
+            height: 100vh; /* Altura completa de la ventana */
+
+            /* Fondo con imagen y capa blanca semitransparente */
+            background:
+                linear-gradient(
+                    rgba(255,255,255,0.85),
+                    rgba(255,255,255,0.85)
+                ),
+                url('snoo.png') no-repeat center center/cover;
+
+            /* Centrado horizontal y vertical */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            /* Color general del texto */
+            color: #2e4d3b;
+        }
+
+        /* Contenedor principal de la sección de contactos */
+        .contactos {
+            background: rgba(255, 255, 255, 0.95); /* Fondo blanco */
+            padding: 50px;
+            border-radius: 30px;   /* Bordes redondeados */
+            width: 90%;
+            max-width: 900px;
+            box-shadow: 0 18px 40px rgba(0,0,0,0.2);
+            display: flex;         /* Diseño en dos columnas */
+            gap: 40px;             /* Espacio entre columnas */
+            animation: aparecer 1.2s ease; /* Animación de entrada */
+        }
+
+        /* Columna izquierda: información de contacto */
+        .info {
+            flex: 1;               /* Ocupa la mitad del contenedor */
+            text-align: left;
+        }
+
+        /* Título de la sección */
+        .info h1 {
+            font-size: 2.5em;
+            color: #388e3c;
+            margin-bottom: 20px;
+        }
+
+        /* Texto de información */
+        .info p {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            color: #4e6f5b;
+        }
+
+        /* Enlaces de correo electrónico */
+        .info a {
+            color: #2e7d32;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Efecto hover en enlaces */
+        .info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Columna derecha: imagen */
+        .imagen {
+            flex: 1; /* Ocupa la otra mitad */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Estilo de la imagen */
+        .imagen img {
+            max-width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        /* Botón para regresar al menú */
+        .volver {
+            margin-top: 30px;
+            display: inline-block;
+            background: #66bb6a;
+            padding: 12px 25px;
+            border-radius: 20px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Efecto hover del botón volver */
+        .volver:hover {
+            background: #43a047;
+        }
+
+        /* Animación de aparición */
+        @keyframes aparecer {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Contenedor principal de contactos -->
+<div class="contactos">
+
+    <!-- COLUMNA IZQUIERDA: Información de contacto -->
+    <div class="info">
+
+        <!-- Título de la sección -->
+        <h1>📧 Contactos</h1>
+
+        <!-- Datos del coordinador -->
+        <p><strong>Coordinador:</strong> Jana Ailin Mauricio Rubio</p>
+        <p>📩 <a href="mailto:juan.perez@reciclaje.com">Janaailin8@gmail.com</a></p>
+        <p>Número telefónico: 55 4968 9327</p>
+
+        <!-- Datos para quejas y sugerencias -->
+        <p><strong>Quejas y sugerencias:</strong> Kimberly Guadalupe Ramirez Rodriguez</p>
+        <p>📩 <a href="mailto:ana.lopez@reciclaje.com">kimberlyra691@gmail.com</a></p>
+        <p>Número telefónico: 56 4845 7430</p>
+
+        <!-- Enlace para volver al menú principal -->
+        <a class="volver" href="menu.html">⬅ Volver al menú</a>
+    </div>
+
+    <!-- COLUMNA DERECHA: Imagen representativa -->
+    <div class="imagen">
+        <img src="contacto.jpg" alt="Equipo de contacto">
+    </div>
+
+</div>
+
+</body>
+</html>

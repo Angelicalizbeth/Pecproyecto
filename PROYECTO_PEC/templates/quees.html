@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Define la codificación de caracteres para permitir acentos y caracteres especiales -->
+    <meta charset="UTF-8">
+
+    <!-- Título que aparece en la pestaña del navegador -->
+    <title>¿Qué es el medioambiente?</title>
+
+    <style>
+        /* ===== ESTILOS GENERALES ===== */
+        * {
+            margin: 0;              /* Elimina márgenes por defecto */
+            padding: 0;             /* Elimina rellenos por defecto */
+            box-sizing: border-box; /* Controla el tamaño real de los elementos */
+            font-family: Arial, sans-serif; /* Fuente principal */
+        }
+
+        /* ===== ESTILO DEL CUERPO ===== */
+        body {
+            min-height: 100vh; /* Ocupa toda la altura de la pantalla */
+            background:
+                linear-gradient(
+                    rgba(255,255,255,0.9),
+                    rgba(255,255,255,0.9)
+                ),
+                url('imagen1.png') no-repeat center center/cover; /* Imagen de fondo */
+            display: flex;
+            justify-content: center; /* Centra horizontalmente */
+            align-items: center;     /* Centra verticalmente */
+            padding: 40px;
+            color: #2e4d3b; /* Color base del texto */
+        }
+
+        /* ===== CONTENEDOR PRINCIPAL ===== */
+        .contenedor {
+            background: rgba(255,255,255,0.95);
+            max-width: 900px; /* Ancho máximo */
+            padding: 45px;    /* Espacio interno */
+            border-radius: 35px; /* Bordes redondeados */
+            box-shadow: 0 20px 40px rgba(0,0,0,0.18); /* Sombra */
+            animation: aparecer 1.1s ease; /* Animación de entrada */
+            border: 2px solid #c8e6c9; /* Borde verde suave */
+        }
+
+        /* ===== TÍTULO PRINCIPAL ===== */
+        h1 {
+            font-size: 2.8em;
+            margin-bottom: 25px;
+            color: #388e3c;
+            text-align: center;
+        }
+
+        /* ===== PÁRRAFOS ===== */
+        p {
+            font-size: 1.15em;
+            line-height: 1.7; /* Espaciado entre líneas */
+            margin-bottom: 20px;
+            color: #4e6f5b;
+            text-align: justify; /* Texto justificado */
+        }
+
+        /* ===== BOTÓN DE REGRESO ===== */
+        .boton {
+            display: inline-block;
+            margin-top: 30px;
+            background: linear-gradient(135deg, #66bb6a, #43a047);
+            color: #0b2e13;
+            padding: 14px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 8px 20px rgba(67,160,71,0.4);
+            transition: all 0.3s ease; /* Transición suave */
+        }
+
+        /* Efecto al pasar el cursor sobre el botón */
+        .boton:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 14px 30px rgba(76,175,80,0.6);
+        }
+
+        /* ===== ANIMACIÓN DE APARICIÓN ===== */
+        @keyframes aparecer {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- CONTENEDOR PRINCIPAL -->
+    <div class="contenedor">
+
+        <!-- TÍTULO DE LA SECCIÓN -->
+        <h1>¿Qué es el medioambiente?</h1>
+
+        <!-- PÁRRAFO 1: DEFINICIÓN -->
+        <p>
+            El medioambiente es el espacio en el que se desarrolla la vida de los
+            distintos organismos favoreciendo su interacción. En él se encuentran
+            tanto seres vivos como elementos sin vida y otros creados por la mano
+            del hombre.
+        </p>
+
+        <!-- PÁRRAFO 2: IMPORTANCIA -->
+        <p>
+            Cualquier organismo obtiene del medioambiente el sustento necesario
+            para garantizar su supervivencia, no solo alimento, sino también
+            refugio, aire o energía. Por eso, mantener su equilibrio resulta
+            fundamental para asegurar la vida tal y como se conoce hoy en día.
+        </p>
+
+        <!-- PÁRRAFO 3: RELACIÓN CON EL SER HUMANO -->
+        <p>
+            En el caso de los seres humanos, precisamos del consumo de gran cantidad
+            de recursos naturales para comer, vestirnos o incluso para fabricar
+            herramientas y otros productos que utilizamos en nuestras actividades
+            diarias. Cuidar el ecosistema para hacer sostenible el uso de estos
+            recursos y evitar su desaparición no es solo una acción bondadosa,
+            sino una necesidad para nuestra propia supervivencia.
+        </p>
+
+        <!-- BOTÓN PARA REGRESAR AL MENÚ -->
+        <a href="menu.html" class="boton">← Volver al menú</a>
+
+    </div>
+
+</body>
+</html>

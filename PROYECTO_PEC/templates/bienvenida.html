@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Define la codificación de caracteres -->
+    <meta charset="UTF-8">
+
+    <!-- Título que aparece en la pestaña del navegador -->
+    <title>Bienvenida</title>
+
+    <style>
+        /* ===== ESTILOS GENERALES ===== */
+        * {
+            margin: 0;              /* Elimina márgenes por defecto */
+            padding: 0;             /* Elimina rellenos por defecto */
+            box-sizing: border-box; /* Controla el tamaño real de los elementos */
+            font-family: Arial, sans-serif; /* Fuente principal */
+        }
+
+        /* ===== FONDO DE LA PÁGINA ===== */
+        /* Imagen de fondo con degradado para mejorar la legibilidad */
+        body {
+            height: 100vh;
+            background:
+                linear-gradient(
+                    rgba(255, 255, 255, 0.75),
+                    rgba(255, 255, 255, 0.75)
+                ),
+                url('snoo.png') no-repeat center center/cover;
+            display: flex;
+            justify-content: center; /* Centrado horizontal */
+            align-items: center;     /* Centrado vertical */
+            color: #2e4d3b;
+        }
+
+        /* ===== CONTENEDOR PRINCIPAL ===== */
+        .contenedor {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(8px); /* Efecto de desenfoque */
+            padding: 48px;
+            border-radius: 30px;
+            width: 70%;
+            max-width: 620px;
+            text-align: center;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.18);
+            animation: aparecer 1.2s ease; /* Animación de entrada */
+            border: 2px solid #c8e6c9;
+        }
+
+        /* ===== TÍTULO ===== */
+        h1 {
+            font-size: 2.6em;
+            margin-bottom: 20px;
+            color: #388e3c;
+        }
+
+        /* ===== DATOS DEL USUARIO ===== */
+        #datos {
+            font-size: 1.15em;
+            margin-bottom: 22px;
+            line-height: 1.6;
+        }
+
+        /* ===== TEXTO INFORMATIVO ===== */
+        p {
+            font-size: 1.1em;
+        }
+
+        /* ===== BOTÓN CONTINUAR ===== */
+        .btn-continuar {
+            margin-top: 35px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 46px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-size: 1.15em;
+            font-weight: bold;
+            color: white;
+            background: linear-gradient(135deg, #81c784, #66bb6a);
+            box-shadow: 0 10px 22px rgba(102,187,106,0.55);
+            transition: all 0.35s ease;
+        }
+
+        /* Efecto al pasar el cursor sobre el botón */
+        .btn-continuar:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(102,187,106,0.7);
+        }
+
+        /* ===== ANIMACIÓN DE APARICIÓN ===== */
+        @keyframes aparecer {
+            from {
+                opacity: 0;
+                transform: translateY(25px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- CONTENEDOR PRINCIPAL -->
+    <div class="contenedor">
+
+        <!-- TÍTULO DE BIENVENIDA -->
+        <h1>✦ ¡Bienvenido! ࿔</h1>
+
+        <!-- Sección donde se muestran los datos del usuario -->
+        <p id="datos"></p>
+
+        <!-- Mensaje informativo -->
+        <p>
+            Gracias por registrarte y unirte con nosotros.<br>
+            Somos <strong>Little Trees Programming</strong> 🌳💻
+        </p>
+
+        <!-- Botón para continuar a la página de introducción -->
+        <a href="introduccion.html" class="btn-continuar">
+            Continuar ➜
+        </a>
+    </div>
+
+    <!-- ===== SCRIPT JAVASCRIPT ===== -->
+    <script>
+        /* Obtiene los parámetros enviados por la URL */
+        const params = new URLSearchParams(window.location.search);
+
+        /* Recupera los valores enviados o asigna un valor por defecto */
+        const nombre = params.get("nombre") || "No especificado";
+        const grupo = params.get("grupo") || "No especificado";
+        const carrera = params.get("carrera") || "No especificado";
+
+        /* Inserta dinámicamente los datos del usuario en la página */
+        document.getElementById("datos").innerHTML = `
+            <strong>Nombre:</strong> ${nombre}<br>
+            <strong>Grupo:</strong> ${grupo}<br>
+            <strong>Carrera:</strong> ${carrera}`;
+    </script>
+
+</body>
+</html>

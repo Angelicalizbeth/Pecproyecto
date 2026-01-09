@@ -1,0 +1,151 @@
+                                                                                                                                 <!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Define la codificación de caracteres para permitir acentos y símbolos -->
+    <meta charset="UTF-8">
+
+    <!-- Título que aparece en la pestaña del navegador -->
+    <title>Registro</title>
+
+    <style>
+        /* Estilos generales aplicados a todos los elementos */
+        * {
+            margin: 0;              /* Elimina márgenes por defecto */
+            padding: 0;             /* Elimina relleno por defecto */
+            box-sizing: border-box; /* Incluye padding y borde en el tamaño total */
+            font-family: Arial, sans-serif; /* Fuente principal */
+        }
+
+        /* Estilos del cuerpo de la página */
+        body {
+            height: 100vh; /* Altura completa de la ventana */
+            
+            /* Fondo con imagen y una capa blanca semitransparente */
+            background:
+                linear-gradient(
+                    rgba(255,255,255,0.85),
+                    rgba(255,255,255,0.85)
+                ),
+                url('snoo.png') no-repeat center center/cover;
+
+            /* Centra el formulario horizontal y verticalmente */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            /* Color general del texto */
+            color: #2e4d3b;
+        }
+
+        /* Contenedor principal del formulario */
+        .formulario {
+            background: rgba(255, 255, 255, 0.95); /* Fondo blanco translúcido */
+            padding: 45px;         /* Espaciado interno */
+            border-radius: 30px;   /* Bordes redondeados */
+            width: 380px;          /* Ancho fijo */
+            text-align: center;    /* Texto centrado */
+            box-shadow: 0 18px 40px rgba(0,0,0,0.2); /* Sombra */
+            animation: aparecer 1.2s ease; /* Animación de entrada */
+            border: 2px solid #c8e6c9; /* Borde verde claro */
+        }
+
+        /* Estilo del título principal */
+        h1 {
+            margin-bottom: 10px;
+            font-size: 2.4em;
+            color: #388e3c; /* Verde oscuro */
+        }
+
+        /* Estilo del texto descriptivo */
+        p {
+            margin-bottom: 25px;
+            font-size: 1.1em;
+            color: #4e6f5b;
+        }
+
+        /* Estilo de los campos de entrada */
+        input {
+            width: 100%;            /* Ocupa todo el ancho */
+            padding: 14px;          /* Espaciado interno */
+            margin: 12px 0;         /* Separación vertical */
+            border-radius: 14px;    /* Bordes redondeados */
+            border: 2px solid #c8e6c9;
+            outline: none;          /* Elimina borde al seleccionar */
+            font-size: 1em;
+            transition: 0.3s;       /* Animación suave */
+        }
+
+        /* Efecto al seleccionar un campo */
+        input:focus {
+            border-color: #66bb6a; /* Cambia color del borde */
+            box-shadow: 0 0 8px rgba(102,187,106,0.4);
+        }
+
+        /* Estilo del botón */
+        button {
+            margin-top: 20px;
+            background: linear-gradient(135deg, #66bb6a, #43a047);
+            color: #0b2e13;
+            border: none;
+            padding: 14px;
+            width: 100%;
+            border-radius: 30px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(67,160,71,0.4);
+            transition: all 0.35s ease;
+        }
+
+        /* Efecto al pasar el mouse sobre el botón */
+        button:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 14px 30px rgba(76,175,80,0.6);
+        }
+
+        /* Animación para que el formulario aparezca suavemente */
+        @keyframes aparecer {
+            from {
+                opacity: 0;
+                transform: translateY(30px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Contenedor principal del formulario -->
+    <div class="formulario">
+
+        <!-- Título del formulario -->
+        <h1>🌿 Registro</h1>
+
+        <!-- Texto de bienvenida -->
+        <p>Ingresa tus datos para comenzar</p>
+
+        <!-- Formulario de registro -->
+        <!-- Al enviarse redirige a bienvenida.html usando método GET -->
+        <form action="bienvenida.html" method="get">
+
+            <!-- Campo para el nombre completo -->
+            <input type="text" name="nombre" placeholder="Nombre completo" required>
+
+            <!-- Campo para el grupo -->
+            <input type="text" name="grupo" placeholder="Grupo" required>
+
+            <!-- Campo para la carrera -->
+            <input type="text" name="carrera" placeholder="Carrera" required>
+
+            <!-- Botón para enviar el formulario -->
+            <button type="submit">Continuar ➜</button>
+        </form>
+    </div>
+
+</body>
+</html>
